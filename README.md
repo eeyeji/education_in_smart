@@ -1,0 +1,1 @@
+# education_in_smart
