@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 예제01</title>
+    <!-- style태그는 반드시 head태그 안에 작성-->
+    <style>
+        input {background-color: gold;}
+    </style>
+    
+    <!-- 자바스크립트 적용할때는 script 태그 사용 -->
+    <!-- script 태그도 head태그 안에 작성 -->
+    <script>
+        var msg="-4차 산업혁명의 태온이 온다. 인공지능, 빅데이터, IoT, 로봇공학, 나노기술-"
+        for(i = 0; i < 60; i++){
+            msg = " " + msg;
+        }
+        function scrollTrend(){
+            document.myForm.trend.value = msg.substring(0, 60);
+            msg = msg.substring(1, msg.length) + msg.substring(0, 1);
+            timevalue = setTimeout(scrollTrend, 100);
+        }
+
+        function stopTrend(){
+            clearTimeout(timevalue);
+
+        }
+    </script>
+</head>
+<body onLoad="scrollTrend()">
+    <form name="myForm">
+        <table>
+            <tr>
+                <td><h3>IT 트랜드</h3></td>
+                <td>
+                    <input type="text" name="trend" size="70"
+                           onMouseOver = "stopTrend()"
+                           onmouseout = "scrollTrend()"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

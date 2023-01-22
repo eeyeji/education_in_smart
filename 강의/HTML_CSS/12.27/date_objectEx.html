@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5에서 추가된 date 객체 예제</title>
+    <style>
+        form{
+            width: 300px;
+        }
+        
+        li{
+            /* 점없애기 */
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <form name="myForm">
+        <!-- fieldset 태그: 깔끔하게 영역으로 묶어줌, 주로 legend 태그와 같이 씀-->
+        <fieldset>
+            <legend>레스토랑 예약</legend>
+            <ul>
+                <li>
+                    <label for="date">예약날짜</label>
+                    <!-- label 태그의 for 속성 값과 input 태그의 name 속성 값과 id 속성 값이 일치 해야함, -->
+                    <input type="date" name="date"/>
+                </li>
+                <li><input type="submit" value="전송"/></li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>
+

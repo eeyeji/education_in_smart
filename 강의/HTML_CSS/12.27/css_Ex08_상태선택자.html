@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 상태선택자 실습 예제</title>
+    <style>
+        input:focus{border: 4px solid gold;} /* :focus - 포커스가 있는 input 태그를 선택 */
+        input:enabled{color:forestgreen;} /* :enabled - 사용 가능한 input 태그를 선택 */
+        input:disabled{color:crimson;} /* disabled - 사용 불가능한 input 태그를 선택*/
+    </style>
+
+</head>
+<body>
+    <form name="memberForm">
+        아이디: <input type="text" name="userId"/><br>
+        비밀번호: <input type="password" name="pwd"/><br>
+        <!-- disabled: 다른 영역과 해당 영역 색깔 다르게 해줌 -->
+        닉네임: <input type="text" name="nickname" value="예니" disabled="disabled"/>
+    </form>
+</body>
+</html>

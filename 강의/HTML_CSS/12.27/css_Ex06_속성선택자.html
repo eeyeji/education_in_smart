@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[중요] CSS3 속성 선택자 실습 예제</title>
+    <style>
+             /*속성선택자*/
+        input[type="text"]{
+            background-color:lightgoldenrodyellow;
+        }
+        input[type="password"]{
+            background-color:azure;
+        }
+    </style>
+</head>
+<body>
+    <form name="myForm">
+        이름
+        <!-- name속성을 이용하여 서버에 넘길 수 있다. -->
+        <input type="text" name="username"/><br>
+        패스워드
+        <input type="password" name="password"/>
+        <input type="submit" value="확인"/>
+
+    </form>
+</body>
+</html>

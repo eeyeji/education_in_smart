@@ -1,0 +1,12 @@
+import keyword
+keyword.kwlist
+>>파이썬에서 변수로 사용할 수 없는 리스트
+'False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 
+'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in',
+'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield'
+
+※알고리즘
+1.정렬 알고리즘: 버블, 삽입, 선택, 퀵
+2.검색 알고리즘: 순차, 이분
+3.스택, 큐
+4.트리구조

@@ -1,0 +1,162 @@
+※장고(Django) 개념정리
+=======================================================================================
+●파이썬 가상 환경이란?
+>파이썬 프로젝트를 진행할 때 '독립된' 환경을 만들어 주는 도구이다.
+
+●파이썬 가상환경 만들기(생성하기)
+>윈도우키 + r
+>cmd입력
+=======================================================================================
+(1)가상환경 디렉토리 생성-명령 프롬프트 실행(여기서 직접 생성)
+C:\Users\user>cd\
+
+C:\>mkdir venvs
+▷ C드라이브에 venvs라는 디렉토리(폴더) 만들기
+C:\>cd venvs
+
+(2)가상 환경 만들기
+C:\venvs>python -m venv mysite
+▷ -m venv: 파이썬 옵션 중 venv 모듈을 사용하여
+▷ mysite: mysite(가상환경 이름 지정)라는 가상환경을 만들어 주겠다.
+▷ 참고: 가상 환경을 만들었다 해서 바로 가상환경을 사용할 수는 없디.
+        가상 완경을 사용하려면 가상 환경에 진입을 해야한다. 
+
+(3)가상 환경에 진입할 수 있는 파일 생성되었는지 확인
+C:\venvs\mysite\Scripts\activate
+▷ C:\venvs\mysite\Scripts 폴더에 있는 activate 파일이 가상환경에 진입하게 하는 파일이다.
+
+(4)가상환경에 진입하기
+C:\venvs>cd C:\
+
+C:\>cd C:\venvs\mysite\Scripts
+
+C:\venvs\mysite\Scripts>activate
+
+(mysite) C:\venvs\mysite\Scripts>
+▷가상환경 진입 완료
+
+(5)mysite 가상환경에 장고(Django) 설치
+(mysite) C:\venvs\mysite\Scripts>pip install django==3.1.3
+▷WARNING: You are using pip version 20.2.3; however, version 22.3.1 is available.
+You should consider upgrading via the 'c:\venvs\mysite\scripts\python.exe -m pip install --upgrade pip' command.
+
+(5-1) pip 패키지 관리자를 최신 버전으로 업그레이드 하자!
+(mysite) C:\venvs\mysite\Scripts> python -m pip install --upgrade pip
+▷ Successfully installed pip-22.3.1
+
+(6) 장고 프로젝트 생성
+▷ 장고 프로젝트는 하나의 웹사이트이다.
+▷ 프로젝트 안에는 여러 개의 앱(App, Application)이 존재한다.
+▷ 앱(App)이란? 로그인/로그아웃(인증 앱), 관리자 앱
+   ▶ 장고에 이미 준비되어 있다.
+▷ 개발자가 직접 만들어야(신경써야) 하는 앱?
+   ▶ 게시판 등등
+=======================================================================================
+▷프로젝트 생성
+1. 장고 프로젝트 루트(root) 디렉토리 생성
+▷ cmd 하나 더 띄우기
+   ▶ C:\Users\user>cd \
+   ▶ C:\>mkdir projects
+   ▶ C:\>cd projects
+   ▶ C:\projects>
+
+2. 프로젝트 루트(root) 디렉토리 안에서 가상 환경에 진입
+▷ C:\projects>C:\venvs\mysite\Scripts\activate
+▷ (mysite) C:\projects>
+   ▶ 가상환경 진입 성공!
+
+3. 장고 프로젝트를 담을 디렉토리 생성하고 이동
+▷ (mysite) C:\projects>mkdir mysite
+▷ (mysite) C:\projects>cd mysite
+▷ (mysite) C:\projects\mysite>
+
+4. 장고 프로젝트 생성
+▷ (mysite) C:\projects\mysite>django-admin startproject config .
+   ▶  django-admin: 도구, 장고 프로젝트 생성시 반드시 필요
+   ▶ '.'(점): 현재 디렉토리를 프로젝트 디렉토리로 만들겠다라는 의미, 반드시 '.(점)' 기입!!
+
+▷ (mysite) C:\projects\mysite>
+   ▶ 오류 안나면 프로젝트 생성완료!!
+
+(5) 로컬 개발 서버 구동하고 웹사이트에 접속
+▷ (mysite) C:\projects\mysite> python manage.py runserver
+   ▶ Starting development server at http://127.0.0.1:8000/ Quit the server with CTRL-BREAK.
+   ▶ 크롬 브라우저에서 http://127.0.0.1:8000/ 접속 or 크롬 브라우저에서 http://localhost:8000 접속
+
+▷ 빠져나오기
+   ▶ ctrl+c
+   ▶ (mysite) C:\projects\mysite>exit
+=======================================================================================
+[참고] 
+mysite 가상 환경에 진입하는 번거로운 작업을 좀 더 효율적으로 해결하는 방법
+★배치 파일(일괄 파일) 만들기
+▷ 배치 파일이란? 
+   ▶ 일련의 과정을 한 번에 수행할 수 있게 해주는 파일
+▷ 메모장에서 만들기  
+▷ 위치가 중요하다!! 
+   ▶ C:\venvs 폴더에서 생성하자!!즉 가상환경 디렉토리에
+▷ @echo off
+  cd c:\projects/mysite
+  c:/venvs/mysite/Scripts/activate
+▷ 배치 파일 만들 때 주의할 점
+   ▶ 저장 시 파일 형식을 '모든 파일'로 설정하고 저장한다.
+   ▶ 저장 시 파일명: mysite.cmd 로 저장
+
+★배치 파일 만든 후 해야하는 작업
+▷ 배치 파일 위치를 path를 환경변수에 추가하기
+   ▶ 윈도우 + R키 
+   ▶ sysdm.cpl 입력
+   ▶ [시스템 속성] 창 바로 접근
+   ▶ path에 C:\venvs 추가
+
+★배치파일 실행
+▷ cmd 실행
+▷ C:\Users\user>mysite
+▷ (mysite) c:\projects\mysite>
+   ▶ 프로젝트에 바로 접속 가능!
+▷ (mysite) c:\projects\mysite>python manage.py runserver
+▷ 크롬에서 http://localhost:8000 접속
+=======================================================================================
+●파이참에서 실행
+file > open > projects > mysite > trust > newwindow
+
+●파이참으로 장고 프로젝트를 불러온 후 가장 먼저 해야할 일
+▷ 파이썬 인터프리터 위치를 가상 환경 위치로 수정하기
+  ▶ file > settings > project: mysite > python interpreter > 톱니바퀴 > add > Exisiting environment > ... > venvs > mysite > Scripts > python.exe > ok > ok
+▷ 크롬 서버: 영어 → 한글로 바꾸기
+   ▶ settings.py
+   ▶ LANGUAGE_CODE = 'en-us' → LANGUAGE_CODE = 'ko-kr'
+   ▶ TIME_ZONE = 'UTC' → TIME_ZONE = 'Asia/Seoul'  
+
+●개발자가 필요한 앱(App) 생성하기
+▷ 질문/답변 게시판 구현 → CRUD 작업
+▷ 게시판(board)
+   ▶ cmd
+   ▶ C:\Users\user>mysite
+   ▶ (mysite) c:\projects\mysite>django-admin startapp pybo
+
+● config/urls.py 파일에 추가해야 할 것
+#추가
+from pybo import views
+▷ views.py 불러오기
+
+#추가
+path('pybo/', views.index),
+▷ 'pybo/'의 의미 → http://localhost:8000/pybo/ 요청
+   ▶ http://localhost:8000/ 까지 생략 가능
+   ▶ http://localhost:8000/ 까지 생략 가능한 이유: 서버 구동하면 장고가 이미 알고 있다.
+   ▶ http://localhost:8000/pybo로 요청을 하면 장고가 자동으로 끝에 /를 붙여서 요청한다.
+
+▷ views.index의 의미 → views.py파일의 index() 함수와 맵핑(연결)시켜라!!
+
+● pybo/views.py 파일에 추가해야 할 것  
+#추가
+from django.http import HttpResponse
+
+#추가
+def index(request):
+    return HttpResponse("pybo App에 오신 것을 환영합니다.")
+▷ http://localhost:8000/pybo/요청시 응답받은 내용 화면에 출력함
+
+● 클라이언트(브라우저)에서 페이지 요청
+▷ http://localhost:8000/pybo/

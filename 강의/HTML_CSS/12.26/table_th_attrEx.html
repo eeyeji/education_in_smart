@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>th 태그에 속성 적용 예제 -> colspan, rowspan 속성</title>
+    <style>
+        tr{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- cellspacing: 셀 안의 여백 / cellpadding: 셀 간격-->
+    <table border="1" align="center" cellspacing="0" cellpadding="0">
+        <tr>
+            <!-- colspan: 열 합치기 -->
+            <th colspan="2" style="background-color: rgba(255, 217, 0, 0.392)">4차 산업 혁명 시대</th>
+        </tr>
+        <tr>
+            <!-- rowspan: 행 합치기 -->
+            <th rowspan="3">인공지능 분야</th>
+            <td>머신러닝(ML)</td>
+        </tr>
+        <tr>
+            <td>딥러닝(DL)</td>
+        </tr>
+        <tr>
+            <td>강화학습(RL)</td>
+        </tr>
+    </table>
+    
+</body>
+</html>

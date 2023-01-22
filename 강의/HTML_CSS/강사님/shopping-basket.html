@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상품 이미지를 나열하고 사용자가 상품을 골라 장바구니 쪽으로 드래그하는 예제</title>
+<style>
+	#div1, #div2 {
+				width:600px; height:200px;
+				border: 1px solid black;
+	}
+	img { width:120px; height:120px; margin:10px; }
+</style>
+
+<script>
+	function dragstartListener(e){
+		e.dataTransfer.setData("text", e.target.id);
+	}
+	
+	function dragoverListener(e){
+		e.preventDefault();
+	}
+	
+	function dropListener(e) {
+		e.preventDefault();
+		var data = e.dataTransfer.getData("text");
+		e.target.appendChild(document.getElementById(data));
+	}
+</script>
+</head>
+<body>
+	<fieldset>
+		<legend>상품 목록 리스트</legend>
+		<div id="div1" ondrop="dropListener(event);" 
+		               ondragover="dragoverListener(event);">
+			<img src="./images/icon1.jpg" draggable="true"
+			     ondragstart="dragstartListener(event);" id="d0"/>
+			     
+			<img src="./images/icon2.jpg" draggable="true"
+			     ondragstart="dragstartListener(event);" id="d1"/>
+			     
+			<img src="./images/icon3.jpg" draggable="true"
+			     ondragstart="dragstartListener(event);" id="d2"/>	
+			     
+			<img src="./images/icon4.jpg" draggable="true"
+			     ondragstart="dragstartListener(event);" id="d3"/>               
+		</div>
+	</fieldset>
+	<br><br>
+	<hr>
+	<fieldset>
+		<legend>장바구니 담기</legend>
+		<div id="div2" ondrop="dropListener(event);"
+		               ondragover="dragoverListener(event);"></div>
+	</fieldset>	
+</body>
+</html>
+
+

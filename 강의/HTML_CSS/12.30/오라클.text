@@ -1,0 +1,44 @@
+★오라클 데이터베이스 설치
+>관리자 계정 암호: system
+----------------------------------------------------------
+[[계정 생성, 롤(role) 권한 부여]]
+SQL> conn /as sysdba
+연결되었습니다.
+SQL> create user testdb identified by testdb1234;
+
+사용자가 생성되었습니다.
+
+SQL> grant connect, resource to testdb;
+
+권한이 부여되었습니다.
+
+SQL> conn testdb/testdb1234
+연결되었습니다.
+
+----------------------------------------------------------
+
+아펙스(Apex)란?
+>Application Express의 약자로 Oracle XE에서는 기본적으로 Apex를 제공한다.
+>웹으로 DB를 컨트롤 할 수 있는 웹 어플리케이션을 말한다.
+
+※아펙스의 포트번호 변경하기
+SQL> conn /as sysdba
+SQL> exec dbms_xdb.setHTTPPort(9000);
+
+http://locallhost:9000으로 접속
+
+※회원가입 폼에서 [ID중복확인] 처리를 하기 위해서 한건의 데이터를 입력하자!!
+
+1.
+insert into member values('test', '1234', '김종호', '하람', 'kim77@naver.com', '961024', '1027123', '010-4621-7651', '남성', 1996, 10, 24, '프로그래머', '06620', 
+                    '서울 서초구 강남대로', '1003동 108호', '서초동, 서초현대타워아파트');
+>1개의 행이 삽입되었습니다.
+
+2.
+데이터 입력이 잘 되었는지 확인하기
+selct * from member;
+
+
+--------------------------------------------------
+
+C:oraclexe\

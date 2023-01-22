@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>semantic 태그 실습 예제</title>
+
+    <!-- HTML 문서에 CSS 적용 -->
+    <style>
+        header{ 
+            width: 960px;
+            height: 100px;
+            background: gold;
+            /* 0 auto: 좌,우 간격 동일하게 적용시켜줌, 가운데정렬과 같은 효과*/ 
+            margin: 0 auto;
+        }    
+        header nav{
+            width: 150px;
+            height: 40px;
+            float: right;
+            background: forestgreen;
+            margin-top: 5px;
+            margin-right: 20px
+        }
+        figure{
+            width: 960px;
+            margin: 0 auto; 
+        }
+        section{
+            width: 960px;
+            margin: 0 auto;   
+        }
+        section article{
+            width: 319px;
+            height: 300px;
+            float: left;
+            background: goldenrod;
+            margin-right: 1px;
+            text-align: center;
+        }
+        aside{
+            position:absolute; 
+            top: 100px;
+            right: 0px;
+            width: 100px;
+            height: 40px;
+            background: greenyellow;
+        }
+        footer{
+            width: 960px;
+            height: 80px;
+            background: gainsboro;
+            margin: 0 auto;
+            clear: both;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>문서의 시작 부분인 Header -> 주로 회사 로고, 제목, 메뉴 등을 지정할 때 사용</h1>
+            <nav>
+                <a href="#"><font color="white">홈</font></a>
+                <a href="#"><font color="white">쇼핑</font></a>
+                <a href="#"><font color="white">커뮤니티</font></a>
+            </nav>
+    </header>
+
+    <figure>
+        <br><br>
+        <h3>문서의 멀티미디어 요소를 나타내는 영억</h3>
+    </figure>
+
+    <section>
+        <h3>메인 콘텐츠 영역 지정 부분 및 문서 내용 구분</h3>
+        <article><font color="white">포럼 포스팅1</font></article>
+        <article><font color="white">포럼 포스팅2</font></article>
+        <article><font color="white">포럼 포스팅3</font></article>
+    </section>
+
+    <!-- 광고영역 -->
+    <aside>
+        <h3>배너 광고->본문과는 다른 서브 컨텐츠 영역</h3>
+    </aside>
+
+    <!-- 회사 전화번호같은 것 써주기?-->
+    <footer>
+        <h4><center>Copyright @ copy; 2022 All rights reserved</center></h4>
+    </footer>
+</body>
+</html>

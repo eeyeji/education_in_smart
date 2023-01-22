@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>numver 객체, datalist 태그 예제</title>
+</head>
+<body>
+    <form name="orderForm">
+        <fieldset>
+            <legend>상품 주문 내용</legend>
+            <ol>
+                <li>
+                    <label for="product">상품명</label>
+                    <input id="product" type="text" value="와이셔츠" readonly/>
+                </li>
+                <li>
+                    <label for="pcolor">색상</label>
+
+                    <!-- input 태그의 list 속성 값과 datalist 태그의 id 속성 값은 일치하여야 함-->
+                    <!-- input 태그의 list 속성: 사용자가 text 필드에 내용을 입력할 때 몇 개의 입력 가능한 값들을 '데이터 목록'으로 보여줄 수 있다.-->
+                    <input id="pcolor" type="text" list="mycolor"/>
+                    <!-- datalist 태그에서 데이터 목록을 정의하고 list 속성에서 datalist id를 알려준다. -->
+                    <datalist id="mycolor">
+                        <option value="black" label="검정색"></option>
+                        <option value="white" label="흰색"></option>
+                        <option value="skyblue" label="하늘색"></option>
+                        <option value="red" label="빨간색"></option>
+                        <option value="gray" label="회색"></option>
+                    </datalist>
+                </li>
+                <li>
+                    <label for="num">주문개수</label>
+                    <input id="num" type="number" min="1" max="3" 
+                           value="1"/>
+                </li>
+            </ol>
+        </fieldset>
+        <button type="submit">구매하기</button>
+    </form>
+</body>
+</html>

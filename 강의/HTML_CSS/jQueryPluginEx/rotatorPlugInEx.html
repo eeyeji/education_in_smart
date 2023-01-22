@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 플러그인 - rotator 적용 예제</title>
+    <style>
+        img{
+            width: 150px; height: 200px;
+        }
+        .divHeight{float: left;}
+        /* clear: both -> left효과 해제하기 위해*/
+        #movieselect{clear: both;}
+    </style>
+
+    <!-- 웹 문서에 jQuery를 적용하려면 아래 소스를 추가시킨다.!! -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- jQuery 인클루드-->
+    <script src="js/jquery.js"></script>
+    <!-- jQuery 플러그인 인클루드-->
+    <script src="js/jquery.rotator.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#rotator1').rotator({ms:1000});
+        });
+    </script>
+
+</head>
+<body>
+    <h2>CGV 현재상영작</h2>
+    <div id="rotator1">
+        <div class="divHeight">
+            <img src="images/CGV/아바타.jpg" hspace="20">
+            <br><center><b>아바타</b></center>
+        </div>
+        <div class="divHeight">
+            <img src="images/CGV/영웅.jpg" hspace="20">
+            <br><center><b>영웅</b></center>
+        </div>
+        <div class="divHeight">
+            <img src="images/CGV/젠틀맨.jpg" hspace="20">
+            <br><center><b>젠틀맨</b></center>
+        </div>
+        <div class="divHeight">
+            <img src="images/CGV/오늘밤.jpg" hspace="20">
+            <br><center><b>오늘 밤, 세계에서 이 사랑이 사라진다 해도</b></center>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div id="movieselect">
+        <b>영화선택</b>
+        <select name="movie">
+            <option selected>영화선택</option>
+            <option value="아바타">아바타</option>
+            <option value="영웅">영웅</option>
+            <option value="젠틀맨">젠틀맨</option>
+            <option value="오늘 밤, 세계에서 이 사랑이 사라진다 해도">오늘 밤, 세계에서 이 사랑이 사라진다 해도 </option>
+        </select>
+    </div>
+
+</body>
+</html>

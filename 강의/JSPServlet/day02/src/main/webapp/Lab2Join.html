@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Servlet 과제</title>
+</head>
+<body>
+
+<form action ="labJoin" method = "post">
+
+<b>Step1: 아이디/비번 입력</b><br>
+이름: <input type = "text" name="id"><br>
+비밀번호: <input type = "paseword" name="pw"><br>
+비밀번호 확인: <input type = "paseword" name="pwcheck"><br>
+
+<hr>
+<b>Step2: 개인정보</b><br>
+
+성별: <input type="radio" name="gender" value="man">남자
+<input type="radio" name="gender" value="woman">여자
+<br>
+
+혈액형: <select name="blood" >
+	<option value = "A형">A형
+	<option>B형
+	<option>AB형
+	<option>O형
+</select>
+<br>
+생일: <input type="date" name="birth"><br>
+
+<hr>
+<b>Step3: 선호도</b><br>
+취미: <input type="checkbox" name="hobby" value="soccer">축구
+<input type="checkbox" name="hobby" value="baseball">야구
+<input type="checkbox" name="hobby" value="basketball">농구
+<br>
+좋아하는 색깔: <input type="color" name="color" value="#aaa51d"><br>
+
+<hr>
+<b>Step4: 적고 싶은 말</b><br>
+<textarea name="writes" rows="3" cols="50">
+하고 싶은 말을 적어주세요</textarea>
+
+<input type="submit" value="제출">
+<input type="reset" value="초기화">
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+자바 언어 특징
+>객체 지향 언어
+>이벤트 처리 중심 언어
+>서버(백엔드) 언어
+
+자바스크립트 언어 특징
+>객체 기반 언어
+>이벤트 핸들러 중심 언어
+>클라이언트(프론트엔드) 언어
+
+jQuery($) 문법
+><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 반드시 필요!!
+>$(선택자).액션(즉 함수)
+
+jQuery 플러그 인(plug in)이란?
+>웹 개발자가 jQuery 자체를 확장하여 사용할 수 있도록 제공해주는 jQuery 라이브러리의 한 형태를 말한다.

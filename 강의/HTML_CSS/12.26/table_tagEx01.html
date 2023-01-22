@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table 태그 예제01 -> 게시판 구현 시 표 만들기</title>
+</head>
+<body>
+    <table width="800" border="1" align="center" cellspacing="0" cellpadding="0">
+        <caption>게시글 목록(전체 게시글: 20)</caption>
+        <colgroup>
+            <!-- col width를 다 더한 값이 table width 값과 같아야 함-->
+            <col width="50">
+            <col width="350">
+            <col width="100">
+            <col width="140">
+            <col width="60">
+            <col width="100">
+        </colgroup>
+        <thead>
+            <tr style="background-color: rgba(255, 217, 0, 0.392);">
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+                <th>IP주소</th>
+            </tr>
+            <tr style="text-align: center">
+                <td>1001</td>
+                <td>HTML 강좌</td>
+                <td>오수철</td>
+                <td>2022/12/26</td>
+                <td>3</td>
+                <td>192.168.56.101</td>
+            </tr>
+        </thead>
+    </table>
+
+</body>
+</html>

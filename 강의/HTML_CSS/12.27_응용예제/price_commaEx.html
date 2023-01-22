@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제 금액에 천단위마다 콤마(,) 넣기 예제</title>
+    <script>
+        var price=1570000;
+        function payment(){
+            var obj = document.getElementById("amount");
+
+            //Number객체에 price값을 인자로 줌
+            var numberObj = new Number(price);
+            result = numberObj.toLocaleString('ko-KR');
+            obj.innerHTML = result + '원';
+        }
+        //1초 후에 payment 함수 호출
+        setInterval(payment, 10);
+
+    </script>
+</head>
+<body>
+    <h2>결제 금액에 천단위마다 콤마 넣기</h2>
+    <h3><b>결제금액: <span id="amount"></span></b></h3>
+</body>
+</html>

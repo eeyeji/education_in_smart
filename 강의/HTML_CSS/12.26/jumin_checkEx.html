@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 회원가입에서 주민번호를 입력받는 경우 -->
+    <title>주민번호 체크 공식 적용</title>
+    <!--
+        주민번호 체크 공식 -> 본인의 주민번호에 적용
+                      ○ ○ ○ ○ ○ ○ - ○ ○ ○ ○ ○ ○ ●
+         1단계: sum =  2 3 4 5 6 7  8 9 2 3 4 5 -> 가중치(weight)
+         2단계: temp = 11 - (sum%11)
+         3단계: result = temp%10
+
+         if(result==●)인 경우 -> 주민번호 정상, 같지 않으면 -> 틀린 주민번호
+    -->
+    <script>
+        function juminCheck(jumin1, jumin2){
+            var juminNum = jumin1 + jumin2;
+
+            var sum = 0;
+            var temp = 0;
+            var result = 0;
+
+            //가중치 만들기-배열로 만드는 이유: 나중에 for문 돌리기 위해
+            var weight = new Array(2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5);
+
+            //1단계 공식
+            for(i = 0; i < 12; i++){
+                //charAt : String으로 저장된 문자열 중에서 한 글자만 선택해서 char타입으로 변환
+                sum = sum + (juminNum.charAt(i)) * weight[i];
+            }
+            //sum 확인작업
+            alert(sum);
+
+            //2단계 공식
+            temp = 11 - (sum%11);
+            alert(temp)
+
+            //3단계 공식: temp 값이 10 또는 11인 경우의 주민번호가 있기 때문에
+            result = temp%10;
+            alert(result)
+
+            if(result != juminNum.charAt(12)){
+                alert("잘못된 주민번호입니다! 다시 확인하십시오.")
+                document.juminForm.jumin_num1.focus();
+            }else{
+                alert("주민번호 입력이 완료되었습니다.")
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="juminForm">
+        주민등록번호
+
+        <!-- 자바스크립트로 앞자리 입력 완료시 자동적으로 뒷자리 입력칸으로 이동하게 만들어주기
+         -> on KeyUp: 키보드의 키를 눌렀다 떼는 순간의 길이 파악하여 6자리가 되는 순간 넘겨주기 -->
+        <input type="text" name="jumin_num1" size="6" onkeyup="if(this.value.length == 6) juminForm.jumin_num2.focus();"/> 
+        -
+        <input type="text" name="jumin_num2" size="7"/>
+        <input type="button" value="주민번호 체크 버튼" onClick="juminCheck(jumin_num1.value, jumin_num2.value)"/>
+    </form>
+</body>
+</html>

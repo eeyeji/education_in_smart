@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery animate() 함수 활용 예제</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){6
+            //선택자: button
+            $('button').click(function(){
+                //선택자: div -> div객체에 대해서 애니메이션 효과 적용
+                $('div').animate({width:300}, 'slow');
+                $('div').animate({height:300}, 'slow');
+                $('div').animate({width:100}, 'slow');
+                $('div').animate({height:100}, 'slow');
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>애니메이션 시작하기</button>
+    <br><br>
+    <div style="background-color: darkolivegreen; width: 100px; height: 100px; position: relative;"></div>
+</body>
+</html>
+

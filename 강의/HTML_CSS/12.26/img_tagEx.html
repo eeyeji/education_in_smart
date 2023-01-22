@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[중요] 기업 사이트의 중요 이미지 '동적'으로 교체</title>
+    <style>
+        #img {
+            width:500px;
+            height: 300px;
+        }
+    </style>
+    <script>
+        
+        //imgs배열 생성
+        var imgs = new Array();
+        
+        //push(): 이미지 넣기 위한 함수
+        //총 4개의 이미지를 넣어주었기 때문에 imgs배열의 길이는 4이다.
+        imgs.push("./images/img1.jpg")
+        imgs.push("./images/img2.jpg")
+        imgs.push("./images/img3.jpg")
+        imgs.push("./images/img4.jpg")
+
+        var index = 0; //전역변수 선언 및 초기화
+
+        window.onload = function(){
+
+            //2초마다 imageChange함수를 호출해라
+            setInterval("imageChange()", 2000)
+        }
+
+        function imageChange(){
+            var currentDate = new Date();
+
+            //document.getElementById("img"): html의 img객체를 가져와서 html과 javascript간의 연결고리 역할을 함!! 
+            var img = document.getElementById("img");
+            
+            //img 객체의 속성을 src로 줌, index 0번부터!
+            img.src = imgs[index];
+            
+            index++;
+
+            //index의 값이 배열의 길이(4)와 같으면 index를 0으로 바꿔준다 -> 그럼 계속해서 동적인 효과를 유지할 수 있다.
+            if(index == imgs.length) index = 0;
+
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>(주)휴먼 소프트웨어 이미지 동적 교체</h1>
+        <img id="img"/>
+    </center>
+
+</body>
+</html>

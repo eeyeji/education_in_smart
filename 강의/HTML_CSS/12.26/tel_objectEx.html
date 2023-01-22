@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tel 객체 예제 -> 회원가입 시 핸드폰번호 유효성 검사</title>
+</head>
+<body>
+    <h1>핸드폰번호 유효성 체크</h1>
+    <form name="myForm">
+        <label for="phone">핸드폰번호</label>
+                                                                                        <!-- 유효성 체크의 의도: 잘못된 데이터 걸러내겠다! -->
+        <input type="tel" id="phone" name ="phone" placeholder = "핸드폰번호를 입력하세요." pattern = "010-[0-9]{4}-[0-9]{4}" required /><br><br>
+                                                                                                     <!-- 메타문자 -->
+        <!-- label의 for 속성과 input의 id 속성은 일치해야함 -->
+        <label for="email">이메일</label>
+        <input type="email" id="email" placeholder="example@domain.com" required />
+        <input type="submit" value = "등록"/>
+    </form>
+</body>
+</html>
+

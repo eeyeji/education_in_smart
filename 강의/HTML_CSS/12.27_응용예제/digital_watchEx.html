@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디지털 시계 만들기 예제</title>
+    <style>
+        #t1{
+            width: 250px;
+            background-color: beige;
+            color:darkgoldenrod;
+            text-align: center;
+            border-radius: 30%;
+            display: inline-block; 
+            /*display 속성이 inline-block으로 지정된 엘리먼트는 마치 하이브리드 모드처럼 동작하는데요. 
+              기본적으로 inline 엘리먼트처럼 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치되지만, 
+              block 엘리먼트처럼 width와 height 속성 지정 및 margin과 padding 속성의 상하 간격 지정이 가능합니다. 
+              다시 말해서, 내부적으로는 block 엘리먼트의 규칙을 따르면서 외부적으로 inline 엘리먼트의 규칙을 따르게 되는 것이지요.
+              대표적인 inline-block 엘리먼트로 <button>이나 <input>, <select> 태그 등을 들 수 있습니다.  */
+        }
+    </style>
+    <script>
+        var inter = 1000;
+
+        function changeObject(){
+            var obj = document.getElementById("t1");
+            var d = new Date();
+            var h = d.getHours(); //현재 시스템의 시간을 얻어옴
+            var m = d.getMinutes(); //현재 시스템의 분을 얻어옴
+            var s = d.getSeconds(); //현재 시스템의 초를 얻어옴
+
+            if(h < 12) txt = 'AM';
+            else txt = 'PM';
+            obj.innerHTML = txt + " " + h + ":" + m + ":" + s + " ";
+        }
+        setInterval(changeObject, inter);
+    </script>
+</head>
+<body>
+    <h2>디지털 시계</h2>
+    <h1 id="t1"></h1>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabs jQuery UI 예제</title>
+
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.16.custom.css">
+
+    <!-- jQuery 인클루드-->
+    <script src="js/jquery.js"></script>
+
+    <!-- jQuery 플러그인 인클루드-->
+    <script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#example').tabs()
+        });
+    </script>
+</head>
+<body>
+    <div id="example">
+        <ul>
+            <li><a href="#tab1">추천도서</a></li>
+            <li><a href="#tab2">베스트도서</a></li>
+            <li><a href="#tab3">신간도서</a></li>
+        </ul>
+        <div id="tab1">
+            <img src="./images/교보문고/불편한편의점.jpg" width="170" height="200">
+        </div>
+        <div id="tab2">
+            <img src="./images/교보문고/달러구트.jpg" width="170" height="200">
+            <img src="./images/교보문고/재벌집.jpg" width="170" height="200">
+        </div>
+        <div id="tab3">
+            <img src="./images/교보문고/인버스.jpg" width="170" height="200">
+        </div>
+    </div>
+</body>
+</html>
